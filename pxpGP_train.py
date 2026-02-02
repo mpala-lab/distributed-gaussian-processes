@@ -278,7 +278,7 @@ def create_augmented_dataset(local_x, local_y, device, world_size: int=1, rank: 
         comm_y = torch.cat(sample_y_list, dim=0)
     else:
         comm_x = torch.zeros((dataset_size * world_size, input_dim), dtype=local_pseudo_x.dtype, device=device)
-        comm_y = torch.zeros(dataset_size * world_size, dtype=local_y.dtype, device=device)
+        comm_y = torch.zeros(dataset_size * world_size, dtype=local_pseudo_y.dtype, device=device)
 
     if input_dim == 1:
         comm_x = comm_x.squeeze(-1)
