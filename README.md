@@ -134,4 +134,5 @@ Dataaset 6-8: Real world elevation dataset from NASA SRTM
 
 <!-- -------------------------------------------------------------------------------------- -->
 
-## References :
+## References:
+Sanket A. Salunkhe, George P. Kontoudis, “Federated Gaussian Process Learning via Pseudo-Representations for Large-Scale Multi-Robot Systems,” International Conference on Autonomous Agents and Multiagent Systems (AAMAS), Paphos, Cyprus, 2026.
