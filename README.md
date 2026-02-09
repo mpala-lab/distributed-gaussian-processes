@@ -1,4 +1,4 @@
-# Proximal Inexact Pseudo Gaussian Process (pxpGP) :
+# Distributed Gaussian Processes
 
 ![pxpGP Overview](results/figs/title3.png)
 
@@ -15,32 +15,32 @@ In this work, we propose the **Proximal Inexact Pseudo Gaussian Process (pxpGP)*
 
 <!-- -------------------------------------------------------------------------------------- -->
 
-## Results:
+## Results
 
-### Hyperparameter Accuracy Estimation:
+### Hyperparameter Accuracy Estimation
 
-**Centralized pxpGP with 16k dataset:**
+**Centralized pxpGP with 16k dataset**
 ![pxpGP with 16k dataset in centralized settings](results/figs/cen_result_16k.svg)
 
-**Centralized pxpGP with 32k dataset:**
+**Centralized pxpGP with 32k dataset**
 ![pxpGP with 32k dataset in centralized settings](results/figs/cen_result_32k.svg)
 
-**Decentralized dec-pxpGP with 16k dataset:**
+**Decentralized dec-pxpGP with 16k dataset**
 ![decpxpGP with 16k dataset in decentralized settings](results/figs/dec_result_16k.svg)
 
-**Decentralized dec-pxpGP with 32k dataset:**
+**Decentralized dec-pxpGP with 32k dataset**
 ![decpxpGP with 32k dataset in decentralized settings](results/figs/dec_result_32k.svg)
 
-### Prediction Performance on real-world NASA SRTM dataset:
+### Prediction Performance on real-world NASA SRTM dataset
 
 **Prediction accuracy of the proposed pxpGP and dec-pxpGP frameworks across fleet size 𝑀 = (16, 49, 64, 100) using a training dataset of size N = 30,000 equally distributed among agents and a test dataset size 𝑁𝑡𝑒𝑠𝑡 = 300 per agent, compared with the baseline models (gapxGP and dec-gapxGP) on the SRTM dataset.**
 ![pxpGP and dec-pxpGP prediction performance](results/figs/pred_performance.png)
 
 <!-- -------------------------------------------------------------------------------------- -->
 
-## Experimental Setup:
+## Experimental Setup
 
-### Python virtual environment setup:
+### Python virtual environment setup
 
 ```
 python3 -m venv gpenv
@@ -54,8 +54,8 @@ pip3 install -r gpenv_requirements.txt
 <!-- -------------------------------------------------------------------------------------- -->
 
 
-## Centralized multi-agent GP Training:
-#### cGP: (Centralized Consensus GP)
+## Centralized multi-agent GP Training
+#### cGP (Centralized Consensus GP)
 ```
 torchrun --nproc_per_node=2 --master_addr=localhost --master_port=12345 cGP_train.py
 ```
@@ -65,40 +65,40 @@ Or
 python3 -m torch.distributed.launch --nproc_per_node=2 --master_addr=localhost --master_port=12345 cgp_train.py
 ``` -->
 
-#### apxGP: (Centralized Approximate Proximal GP)
+#### apxGP (Centralized Approximate Proximal GP)
 ```
 torchrun --nproc_per_node=2 --master_addr=localhost --master_port=12345 apxGP_train.py
 ```
 
-#### gapxGP: (Centralized Generalized Approximate Proximal GP)
+#### gapxGP (Centralized Generalized Approximate Proximal GP)
 ```
 torchrun --nproc_per_node=2 --master_addr=localhost --master_port=12345 gapxGP_train.py
 ```
 
-#### pxpGP: (Centralized Pseudo Approximate Proximal GP) (*Proposed method)
+#### pxpGP (Centralized Pseudo Approximate Proximal GP) (*Proposed method)
 ```
 torchrun --nproc_per_node=2 --master_addr=localhost --master_port=12345 gapxGP_train.py
 ```
 
-## Decentralized multi-agent GP Training:
-#### dec_cGP: 
+## Decentralized multi-agent GP Training
+#### dec_cGP 
 
 ```
 torchrun --nproc_per_node=4 --master_addr=127.0.0.1 --master_port=29500 dec_cGP_train.py 
 ```
 
-#### dec_apxGP:
+#### dec_apxGP
 
 ```
 torchrun --nproc_per_node=4 --master_addr=127.0.0.1 --master_port=29500 dec_apxGP_train.py 
 ```
 
-#### dec_gapxGP:
+#### dec_gapxGP
 ```
 torchrun --nproc_per_node=4 --master_addr=127.0.0.1 --master_port=29500 dec_gpxGP_train.py 
 ```
 
-#### dec_pxpGP:
+#### dec_pxpGP
 ```
 torchrun --nproc_per_node=4 --master_addr=127.0.0.1 --master_port=29500 dec_pxpGP_train.py 
 ```
@@ -111,7 +111,7 @@ Where,
 3. `master_port` : Port ID of central node
 
 
-### Run on HPC:
+### Run on HPC
 
 Use slurm file to write commands and run using following command:
 ```
@@ -124,7 +124,7 @@ It's advisible to run inside tmux session:
 
 ```
 
-### Datasets:
+### Datasets
 
 Dataset 1-5: Synthetic dataset generated using generative GP models \
 Dataaset 6-8: Real world elevation dataset from NASA SRTM 
@@ -134,5 +134,16 @@ Dataaset 6-8: Real world elevation dataset from NASA SRTM
 
 <!-- -------------------------------------------------------------------------------------- -->
 
-## References:
+## Citation
+If you use this code in your research, please cite:
+
+```bibtex
+@inproceedings{salunkhe2026federated,
+  title={Federated Gaussian Process Learning via Pseudo-Representations for Large-Scale Multi-Robot Systems},
+  author={Salunkhe, Sanket and Kontoudis, George P},
+  booktitle={International Conference on Autonomous Agents and Multiagent Systems (AAMAS)},
+  year={2026},
+  doi={10.65109/YQEA8075}
+}
+
 Sanket A. Salunkhe, George P. Kontoudis, “Federated Gaussian Process Learning via Pseudo-Representations for Large-Scale Multi-Robot Systems,” International Conference on Autonomous Agents and Multiagent Systems (AAMAS), Paphos, Cyprus, 2026.
