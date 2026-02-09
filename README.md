@@ -145,5 +145,6 @@ If you use this code in your research, please cite:
   year={2026},
   doi={10.65109/YQEA8075}
 }
+```
 
 Sanket A. Salunkhe, George P. Kontoudis, “Federated Gaussian Process Learning via Pseudo-Representations for Large-Scale Multi-Robot Systems,” International Conference on Autonomous Agents and Multiagent Systems (AAMAS), Paphos, Cyprus, 2026.
