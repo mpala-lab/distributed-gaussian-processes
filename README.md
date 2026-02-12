@@ -1,6 +1,6 @@
 # Distributed Gaussian Processes
 
-![pxpGP Overview](results/figs/title4.png)
+![pxpGP Overview](results/figs/title3.png)
 
 <!-- **Maintained by:** Sanket A Salunkhe  
 **Contact details:** Sanket (sanket_salunkhe@mines.edu), George (george.kontoudis@mines.edu) -->
